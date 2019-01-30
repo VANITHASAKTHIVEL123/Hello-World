@@ -1,0 +1,31 @@
+
+<div class=row>
+<div class="col-sm-5">
+    <emp [data]="SelectedEmployee"></emp>
+    </div>
+<div class ="col-md-6">
+    <table class="table table-sm table-hover">
+
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.employeeID}}</td>
+            <td>{{emp.firstName}} . {{emp.lastName}} </td>
+            <td>{{emp.psition}}</td>
+            <td>{{emp.empcode}}</td>
+            <td>{{emp.office}}</td>
+            <td>
+                <a class="btn" (click)="showForEdit(emp)">
+                    <i class="fa fa-pencil-square-o"></i>
+                </a>
+            </td>
+            <td>
+                <a class="btn text-danger" (click)="delete(emp.employeeID)">
+                    <i class="fa fa-trash-o"></i>
+                </a>
+            </td>
+
+        </tr>
+
+    </table>
+        </div>
+
+

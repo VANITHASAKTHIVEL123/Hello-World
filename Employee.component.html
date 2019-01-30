@@ -1,0 +1,57 @@
+<form class="emp-form" #employeeForm="ngForm" (ngsubmit)="onsubmit(employeeForm)">
+
+
+  <div class="form-group col-md-10">
+    <input type="text" hidden class="form-control" #id="ngModel" [(ngModel)]="SelectedEmployee.employeeID" [ngModelOptions]="{standalone: true}"
+      placeholder="id" required>
+    <div class="validation-error" *ngIf="id.invalid && id.touched">This filed required"</div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-sm-6">
+
+      <input type="text" class="form-control" #firstName="ngModel" [(ngModel)]="SelectedEmployee.firstName" [ngModelOptions]="{standalone: true}"
+        placeholder="FirstName" required>
+      <div class="validation-error" *ngIf="firstName.invalid && firstName.touched">This filed required"</div>
+    </div>
+    <div class="form-group col-sm-6">
+
+      <input type="text" class="form-control" #lastName="ngModel" [(ngModel)]="SelectedEmployee.lastName" [ngModelOptions]="{standalone: true}"
+        placeholder="LastName" required>
+      <div class="validation-error" *ngIf="lastName.invalid && lastName.touched">This filed required</div>
+    </div>
+  </div>
+  <div class="form-group col-sm-10">
+    <input type="text" class="form-control" #psition="ngModel" [(ngModel)]="SelectedEmployee.psition" [ngModelOptions]="{standalone: true}"
+      placeholder="Position" required>
+    <div class="validation-error" *ngIf="psition.invalid && psition.touched">This filed required</div>
+  </div>
+
+  <div class="form-group col-sm-10">
+    <input type="text" class="form-control" #empcode="ngModel" [(ngModel)]="SelectedEmployee.empcode" [ngModelOptions]="{standalone: true}"
+      placeholder="Empcode" required>
+    <div class="validation-error" *ngIf="empcode.invalid && empcode.touched">This filed required</div>
+  </div>
+
+  <div class="form-group col-sm-10">
+    <input type="text" class="form-control" #office="ngModel" [(ngModel)]="SelectedEmployee.office" [ngModelOptions]="{standalone: true}"
+      placeholder="office" required>
+    <div class="validation-error" *ngIf="office.invalid && office.touched">This filed required</div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <button type="submit" class="button.btn-lg btn-block btn-info" (click)="onsubmit()">
+          <i class="fa fa-floppy-o"></i>Submit</button>
+
+      </div>
+
+      <div class="form-group col-md-6">
+        <button type="reset" class="button.btn-lg btn-block btn-info" (click)="resetForm(employeeForm)">
+          <i class="fa fa-repeat"></i>Reset</button>
+      </div>
+    </div>
+  </div>
+
+  {{Name}
+</form>
